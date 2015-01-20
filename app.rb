@@ -56,9 +56,17 @@ class App < Sinatra::Base
       day
     end
 
+    # Group tweets by times of tweet.
     def tweet_time(array)
-      time = array.group_by_hour_of_day { |tweet| tweet.created_at }
-      time.merge(time) { |k, v| v.count }
+      time = {}
+      array.each do |tweet|
+        if time.has_key?(tweet.created_at.hour)
+          time[tweet.created_at.hour] += 1
+        else
+          time[tweet.created_at.hour] = 1
+        end
+      end
+      time
     end
 
     def get_user_history

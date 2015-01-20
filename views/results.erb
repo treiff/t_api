@@ -1,10 +1,18 @@
-<h1>you requested user: <%= @tag %></h1>
+<div class="jumbotron">
+  <h1>User: <%= @tag %></h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Day tweeted:</h2>
+      <%= pie_chart(tweet_day(@timeline)) %>
+    </div>
+    <div class="col-sm-6">
+      <h2>Time tweeted:</h2>
+      <%= pie_chart(tweet_time(@timeline)) %>
+    </div>
+  </div>
 
-<h2>Results - day tweeted:</h2>
+  <h2>Followers trend:</h2>
 
-<%= pie_chart(tweet_day(@timeline)) %>
-
-<h2>Results - followers trend:</h2>
-
-<% result = get_user_history["followersperdate"] %>
-<%= line_chart scrub_date(result), min: nil, max: nil %>
+  <% result = get_user_history["followersperdate"] %>
+  <%= line_chart scrub_date(result), min: nil, max: nil %>
+</div>
