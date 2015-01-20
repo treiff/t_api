@@ -1,0 +1,10 @@
+<h1>you requested user: <%= @tag %></h1>
+
+<h2>Results - day tweeted:</h2>
+
+<%= pie_chart(tweet_day(@timeline)) %>
+
+<h2>Results - followers trend:</h2>
+
+<% result = get_user_history["followersperdate"] %>
+<%= line_chart scrub_date(result), min: nil, max: nil %>

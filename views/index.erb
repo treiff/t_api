@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <h1>Tweet Data</h1>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <div class="caption">
+          <p>Reveal some stats on a particular twitter user.</p>
+        </div>
+        <form action="/results" method="get">
+          <div class="form-group">
+            <input type="text" name="tag" placeholder="Enter Twitter handle">
+            <input type="submit" class="btn btn-xs btn-primary" value="Get it!">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="thumbnail">
+        <div class="caption">
+          <p>See whats happening in a given area.</p>
+        </div>
+        <form class="form-inline" action="/georesults" method="get">
+          <div class="form-group">
+            <input type="text" name="tag" placeholder="Enter search term">
+          </div>
+          <div class="form-group">
+            <input type="text" name="location" placeholder="Enter your location">
+          </div>
+          <div class="form-group">
+            <input type="text" name="radius" placeholder="Enter search radius">
+          </div>
+          <input type="submit" class="btn btn-xs btn-primary" value="Get it!">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

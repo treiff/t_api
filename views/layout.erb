@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= "#{@title} | #{SITE_TITLE}" %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <script src="//www.google.com/jsapi"></script>
+    <script src="/js/chartkick.js"></script>
+  </head>
+  <div class="container">
+    <body>
+
+      <%= yield %>
+
+    </body>
+  </div>
+</html>
